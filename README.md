@@ -1,2 +1,2 @@
-# Algos
+# Algorithms
 Algorithm study related
