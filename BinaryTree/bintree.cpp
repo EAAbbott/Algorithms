@@ -73,19 +73,19 @@ node *BinTree::searchKey(int keyValue, node *leaf)
         return nullptr;
 }
 
-void BinTree::printTree(node *leaf, int indent)
+void BinTree::printTree(node *leaf)
 {
-    if(leaf != nullptr) {
-        if(leaf->left) printTree(leaf->left, indent+4);
-        if(leaf->right) printTree(leaf->right, indent+4);
-        if (indent) {
-            std::cout << std::setw(indent) << ' ';
-        }
-        std::cout<< leaf->keyValue << "\n ";
+    if(leaf != nullptr)
+    {
+        if(leaf->left) printTree(leaf->left);
+        std::cout<< leaf->keyValue << std::endl;
+        if(leaf->right) printTree(leaf->right);
     }
 }
 
-//now specify public methods
+
+
+//specify public methods
 void BinTree::destroyTree()
 {
     destroyTree(root);
@@ -97,6 +97,7 @@ void BinTree::insertKey(int keyValue)
         insertKey(keyValue, root);
     else
     {
+        //empty tree case
         root = new node;
         root->keyValue = keyValue;
         root->left = nullptr;
@@ -109,7 +110,7 @@ node *BinTree::searchKey(int keyValue)
     return searchKey(keyValue, root);
 }
 
-void BinTree::printTree(int indent)
+void BinTree::printTree()
 {
-    printTree(root, indent);
+    printTree(root);
 }

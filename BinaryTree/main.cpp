@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "bintree.h"
 
 using namespace std;
@@ -6,14 +7,12 @@ using namespace std;
 int main()
 {
     BinTree x;
-    x.insertKey(30);
-    x.insertKey(23);
-    x.insertKey(4);
-    x.insertKey(90);
-    x.insertKey(55);
-    x.insertKey(30);
+    for (int i = 0; i < 10; i++)
+    {
+        x.insertKey(rand() % 100);
+    }
 
-    cout << x.searchKey(90) << endl;
+    x.printTree();
 
     return 0;
 }

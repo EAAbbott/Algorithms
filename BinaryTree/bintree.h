@@ -16,12 +16,12 @@ public:
     void insertKey(int keyValue);
     node *searchKey(int keyValue);
     void destroyTree();
-    void printTree(int indent);
+    void printTree();
 
 private:
     void destroyTree(node *leaf);
     void insertKey(int keyValue, node *leaf);
-    void printTree(node *leaf, int indent);
+    void printTree(node *leaf);
     node *searchKey(int keyValue, node *leaf);
     node *root;
 };
